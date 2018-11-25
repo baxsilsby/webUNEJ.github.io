@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Structure</title>
+
+    <style>
+        body {
+            background-color: #2c2c2c;
+            overflow-x: hidden;
+            font-family: tahoma;
+            margin: 0;
+            -webkit-font-smooting: antialiased;
+
+        }
+
+        .judul {
+            text-align: center;
+            color: white;
+            padding-bottom: 30px;
+        }
+
+        .judul h1 {
+            margin-bottom: 0;
+            font-size: 2vw;
+        }
+
+        .judul p {
+            font-size: 1.5vw;
+            padding: 0;
+            margin: 0;
+        }
+
+        .flex {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        .slider-wrapper div {
+            position: relative;
+        }
+
+        .slider-wrapper {
+            margin-top: 5vw;
+            margin-left: 11vw;
+        }
+
+        .slide-image {
+            height: 24vw;
+        }
+
+        .slide-image img {
+            width: 24vw;
+            border: 2px solid white;
+        }
+
+        .slide-content {
+            width: 24vw;
+            color: white;
+            padding: 3vw 18vw 3vw 9vw;
+        }
+
+        .slide-date {
+            color: white;
+            font-size: 1.1 vw;
+            font-weight: 400;
+            letter-spacing: 0.1vw;
+            padding-bottom: 1.4vw;
+        }
+
+        .slide-title {
+            font-size: 1.4vw;
+            font-weight: 400;
+            letter-spacing: 0.1vw;
+            line-height: 1.55vw;
+            padding-bottom: 1.8vw;
+        }
+
+        .slide-text {
+            font-size: 1vw;
+            line-height: 1.5vw;
+            opacity: 0.8;
+            padding-bottom: 1vw;
+            text-align: justify;
+        }
+
+        .link-icon ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .link-icon ul li {
+            display: block;
+            padding: 25px 10px;
+        }
+
+        .link-icon ul li img {
+            width: 2vw;
+            text-decoration: none;
+        }
+
+        .slide-more {
+            font-weight: 400;
+            letter-spacing: 0, 1vw;
+            float: left;
+            font-size: 0.9vw;
+        }
+
+        .slide-nav {
+            margin-left: 64vw;
+            margin-top: -5.5vw;
+        }
+
+        .arrows {
+            width: 3.5vw;
+            margin-top: -5.8vw;
+            margin-left: 72vw;
+            position: relative;
+        }
+
+        .arrow {
+            display: inline-block;
+            position: absolute;
+            width: 1.2vw;
+            height: 1.2vw;
+            background: transparent;
+            text-indent: -9999px;
+            border-top: 0.15vw solid #fff;
+            border-left: 0.15vw solid #fff;
+            transition: all .1s ease-in-out;
+            text-decoration: none;
+            color: transparent;
+        }
+
+        .arrow:hover {
+            border-color: #0A8ACB;
+            border-width: 0.25vw;
+        }
+
+        .arrow:before {
+            display: block;
+            height: 200%;
+            width: 200%;
+            margin-left: -50%;
+            margin-top: -50%;
+            content: "";
+            transform: rotate(45deg);
+        }
+
+        .arrow.prev {
+            transform: rotate(-45deg);
+            left: 0;
+        }
+
+        .arrow.next {
+            transform: rotate(135deg);
+            right: 0;
+        }
+
+
+        @media(max-width :1500px) {
+            .slide {
+                display: initial;
+            }
+
+            .slide-content {
+                display: block;
+                padding-left: 0;
+            }
+        }
+
+        @media(max-width :1000px) {
+            .judul h1 {
+                margin-bottom: 0;
+                font-size: 3vw;
+            }
+
+            .judul p {
+                font-size: 2vw;
+                padding: 0;
+                margin: 0;
+            }
+
+            .slider-wrapper {
+                display: block;
+                padding-left: 20%;
+            }
+
+            .slide {
+                display: block;
+            }
+
+            .slide-image img {
+                width: 40vw;
+            }
+
+            .slide-content {
+                display: block;
+                padding-left: 0;
+                padding-top: 20vw;
+                width: 40vw;
+                ;
+            }
+
+            .slide-date {
+                color: white;
+                font-size: 2vw;
+                font-weight: 400;
+                letter-spacing: 0.1vw;
+                padding-bottom: 1.4vw;
+            }
+
+            .slide-title {
+                font-size: 2vw;
+                font-weight: 400;
+                letter-spacing: 0.1vw;
+                line-height: 1.55vw;
+                padding-bottom: 1.8vw;
+            }
+
+            .slide-text {
+                font-size: 1.8vw;
+                line-height: 2vw;
+                opacity: 0.8;
+                padding-bottom: 1vw;
+                text-align: justify;
+            }
+
+            .arrow {
+                display: none;
+            }
+        }
+
+        @media(max-width :800px) {
+            .judul h1 {
+                margin-bottom: 0;
+                font-size: 4vw;
+            }
+
+            .judul p {
+                font-size: 3vw;
+                padding: 0;
+                margin: 0;
+            }
+
+            .slider-wrapper {
+                display: block;
+                padding-left: 15%;
+            }
+
+            .slide {
+                display: block;
+            }
+
+            .slide-image img {
+                width: 50vw;
+            }
+
+            .slide-content {
+                display: block;
+                padding-left: 0;
+                padding-top: 30vw;
+                width: 50vw;
+                ;
+            }
+
+            .slide-date {
+                color: white;
+                font-size: 3vw;
+                font-weight: 400;
+                letter-spacing: 0.1vw;
+                padding-bottom: 1.4vw;
+            }
+
+            .slide-title {
+                font-size: 3vw;
+                font-weight: 400;
+                letter-spacing: 0.1vw;
+                line-height: 1.55vw;
+                padding-bottom: 1.8vw;
+            }
+
+            .slide-text {
+                font-size: 2vw;
+                line-height: 3vw;
+                opacity: 0.8;
+                padding-bottom: 1vw;
+                text-align: justify;
+            }
+
+            .arrow {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="judul">
+        <h1>STRUKTUR ORGANISASI</h1>
+        <p>Universitas Jember</p>
+    </div>
+
+    <div class="slider">
+        <div class="slider-wrapper flex">
+            <div class="slide flex">
+                <div class="slide-image slider-link prev">
+                    <img src="../images/rektor1.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+
+                <div class="slide-content">
+                    <div class="slide-date">Rector</div>
+                    <div class="slide-title">Drs. Moh. Hasan, M.Sc, Ph.D</div>
+
+                    <div class="slide-text">
+                        Mengeyam pendidikan di Universitas Jember dengan Program Studi Matematika S-2 dengan jabatan
+                        fungsional
+                        sebagai Lektor Kepala Universitas Jember dengan pendidikan tertinggi S-3. Memiliki status
+                        ikatan kerja sebagai dosen tetap
+                        dan status aktivitas aktif mengajar.
+
+                        <div class="link-icon">
+                            <ul>
+                                <li><a href="https://id-id.facebook.com/login/" target="_blank"><img src="../images/facebook-logo-button.png"
+                                            alt=""></a></li>
+                                <li><a href="https://twitter.com/login?lang=id" target="_blank"><img src="../images/twitter-logo-button.png"
+                                            alt=""></a></li>
+                                <li><a href="https://web.telegram.org/#/login" target="_blank"><img src="../images/telegram.full.png"
+                                            alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="slide flex">
+                <div class="slide-image slider-link prev">
+                    <img src="../images/wr1.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+
+                <div class="slide-content">
+                    <div class="slide-date">Vice Rector</div>
+                    <div class="slide-title">Drs. Zulfikar, Ph.D.</div>
+
+                    <div class="slide-text">
+                        Mengeyam pendidikan di Universitas Jember dengan Program Studi Kimia S-1 dengan jabatan
+                        fungsional
+                        sebagai Lektor Kepala Universitas Jember dengan pendidikan tertinggi S-3. Memiliki status
+                        ikatan kerja sebagai dosen
+                        tetap dan status aktivitas aktif mengajar.
+
+                        <div class="link-icon">
+                            <ul>
+                                <li><a href="https://id-id.facebook.com/login/" target="_blank"><img src="../images/facebook-logo-button.png"
+                                            alt=""></a></li>
+                                <li><a href="https://twitter.com/login?lang=id" target="_blank"><img src="../images/twitter-logo-button.png"
+                                            alt=""></a></li>
+                                <li><a href="https://web.telegram.org/#/login" target="_blank"><img src="../images/telegram.full.png"
+                                            alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="slide flex">
+                <div class="slide-image slider-link prev">
+                    <img src="../images/wr2.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+
+                <div class="slide-content">
+                    <div class="slide-date">Vice Rector II</div>
+                    <div class="slide-title">Drs. Wachju Subchan, MS., PhD.</div>
+
+                    <div class="slide-text">
+                        Mengeyam pendidikan di Universitas Jember pada Pendidikan Biologi S-1 dengan jabatan fungsional
+                        sebagai Lektor Kepala Universitas Jember dengan pendidikan tertinggi S-3. Memiliki status
+                        ikatan kerja sebagai dosen
+                        tetap dan status aktivitas aktif mengajar.
+
+                        <div class="link-icon">
+                            <ul>
+                                <li><a href="https://id-id.facebook.com/login/" target="_blank"><img src="../images/facebook-logo-button.png"
+                                            alt=""></a></li>
+                                <li><a href="https://twitter.com/login?lang=id" target="_blank"><img src="../images/twitter-logo-button.png"
+                                            alt=""></a></li>
+                                <li><a href="https://web.telegram.org/#/login" target="_blank"><img src="../images/telegram.full.png"
+                                            alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="slide flex">
+                <div class="slide-image slider-link prev">
+                    <img src="../images/wr3.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+
+                <div class="slide-content">
+                    <div class="slide-date">Vice Rector III</div>
+                    <div class="slide-title">Prof. Dr. M. Sulton, M.Pd</div>
+
+                    <div class="slide-text">
+                        jabatan fungsional sebagai Lektor Kepala Universitas Jember. Memiliki status ikatan kerja
+                        sebagai dosen
+                        tetap dan status aktivitas aktif mengajar.
+
+                        <div class="link-icon">
+                            <ul>
+                                <li><a href="https://id-id.facebook.com/login/" target="_blank"><img src="../images/facebook-logo-button.png"
+                                            alt=""></a></li>
+                                <li><a href="https://twitter.com/login?lang=id" target="_blank"><img src="../images/twitter-logo-button.png"
+                                            alt=""></a></li>
+                                <li><a href="https://web.telegram.org/#/login" target="_blank"><img src="../images/telegram.full.png"
+                                            alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="arrows"> <a href="#" title="Previous" class="arrow slider-link prev"></a> <a href="#" title="Next"
+                class="arrow slider-link next"></a>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
+
+    <script>
+        (function ($) {
+
+            $(document).ready(function () {
+
+                var s = $('.slider'),
+                    sWrapper = s.find('.slider-wrapper'),
+                    sItem = s.find('.slide'),
+                    btn = s.find('.slider-link'),
+                    sWidth = sItem.width(),
+                    sCount = sItem.length,
+                    slide_date = s.find('.slide-date'),
+                    slide_title = s.find('.slide-title'),
+                    slide_text = s.find('.slide-text'),
+                    slide_more = s.find('.slide-more'),
+                    slide_image = s.find('.slide-image img'),
+                    sTotalWidth = sCount * sWidth;
+
+                sWrapper.css('width', sTotalWidth);
+                sWrapper.css('width', sTotalWidth);
+
+                var clickCount = 0;
+
+                btn.on('click', function (e) {
+                    e.preventDefault();
+
+                    if ($(this).hasClass('next')) {
+
+                        (clickCount < (sCount - 1)) ? clickCount++ : clickCount = 0;
+                    } else if ($(this).hasClass('prev')) {
+
+                        (clickCount > 0) ? clickCount-- : (clickCount = sCount - 1);
+                    }
+                    TweenMax.to(sWrapper, 0.4, { x: '-' + (sWidth * clickCount) })
+
+
+                    //CONTENT ANIMATIONS
+
+                    var fromProperties = { autoAlpha: 0, x: '-50', y: '-10' };
+                    var toProperties = { autoAlpha: 0.8, x: '0', y: '0' };
+
+                    TweenLite.fromTo(slide_image, 1, { autoAlpha: 0, y: '40' }, { autoAlpha: 1, y: '0' });
+                    TweenLite.fromTo(slide_date, 0.4, fromProperties, toProperties);
+                    TweenLite.fromTo(slide_title, 0.6, fromProperties, toProperties);
+                    TweenLite.fromTo(slide_text, 0.8, fromProperties, toProperties);
+                    TweenLite.fromTo(slide_more, 1, fromProperties, toProperties);
+
+                });
+
+            });
+        })(jQuery);
+
+        $('.overlay').addClass('overlay-blue');
+    </script>
+
+
+</html>

@@ -1,0 +1,255 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(45deg, #000424, #5d001c);
+}
+
+.judul {
+  padding-top: 50px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  animation-duration: 1s;
+  animation-iteration-count: unset;
+}
+
+.judul .logo {
+  display: inline-block;
+}
+.judul .logo img {
+  float: left;
+  text-align: center;
+  width: 100px;
+  height: auto;
+}
+.judul .text {
+  float: right;
+  text-align: left;
+  padding-left: 20px;
+}
+.judul .text h1 {
+  font-size: 30px;
+}
+.judul .text h1 span {
+  font-size: 20px;
+}
+
+.container {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 250px;
+  display: flex;
+}
+
+.container .box {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: #ccc;
+  transition: 0.5s;
+}
+.container .box:hover {
+  transform: scale(1.1);
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 1);
+}
+
+.container .box .thumb {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: black;
+}
+
+.container .box:nth-child(odd) .thumb {
+  bottom: 0;
+  left: 0;
+}
+
+.container .box .thumb p {
+  text-align: center;
+  color: white;
+  padding: 10px;
+  width: 220px;
+}
+.container .box .thumb img {
+  width: 100%;
+}
+
+.container .box .details {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: #262626;
+}
+
+.container .box:nth-child(even) .details {
+  bottom: 0;
+  left: 0;
+}
+
+.container .box:nth-child(1) .details {
+  background: linear-gradient(45deg, #56007f, #810070);
+}
+
+.container .box:nth-child(2) .details {
+  background: linear-gradient(45deg, #f10078, #de73de);
+}
+
+.container .box:nth-child(3) .details {
+  background: linear-gradient(45deg, #0077ff, #00d3ff);
+}
+
+.container .box:nth-child(4) .details {
+  background: linear-gradient(45deg, #ffc400, #ff00ac);
+}
+.container .box:nth-child(5) .details {
+  background: linear-gradient(45deg, #09afaa, #34f2bf);
+}
+.container .box:nth-child(6) .details {
+  background: linear-gradient(45deg, #e94ade, #7f0055);
+}
+
+.container .box .details .content {
+  position: absolute;
+  top: calc(50% + 16px);
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: 0.5s;
+}
+.container .box:hover .details .content {
+  top: calc(50%);
+}
+
+.container .box .details .content img {
+  width: 80px;
+}
+.container .box .details .content .fa {
+  font-size: 80px;
+  color: #fff;
+}
+
+.container .box .details .content h3 {
+  margin: 0;
+  padding: 0;
+  padding: 10px 0;
+  color: #fff;
+}
+
+.container .box .details .content a {
+  display: inline-block;
+  padding: 5px 20px;
+  color: #5e5e5e;
+  background: white;
+  border: 2px solid #fff;
+  text-decoration: none;
+  transition: 0.5s;
+  border-radius: 20px;
+  transform: scale(0);
+}
+.container .box:hover .details .content a {
+  transform: scale(0.9);
+  background: transparent;
+  color: #fff;
+  font-weight: bold;
+}
+
+.container .box .details .content a:hover {
+  background: #fff;
+  color: #262626;
+}
+
+.video{
+  display: inline-block;
+  margin-top: 4.2rem;
+}
+/* resposive */
+@media(max-width :1500px){
+  .judul{
+    padding-top: 50px;
+}
+
+.container{
+    top: 50%;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container .box{
+    height: 250px; 
+}
+.container .box .thumb{
+    display: none; 
+}
+}
+@media(max-width :1000px){
+  .judul {
+    padding-top: 50px;
+  }
+  .container {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .container .box {
+    height: 250px;
+    width: 250px;
+  }
+  .container .box .thumb {
+    display: none;
+  }
+}
+@media(max-width : 768px){
+  .judul {
+    padding-top: 50px;
+  }
+  .judul .logo img {
+    float: none;
+    text-align: center;
+  }
+  .judul .text {
+    float: none;
+    text-align: center;
+  }
+  .container {
+    top: 100%;
+    width: 90%;
+    display: initial;
+  }
+  .container .box {
+    width: 50%;
+    height: 250px;
+    float: left;
+  }
+}
+@media(max-width : 470px){
+  .container {
+    width: 90%;
+    display: initial;
+  }
+  .container .box {
+    width: 50%;
+    height: 250px;
+    float: left;
+  }
+}
+
+@media (max-width: 368px){
+.container{
+  margin-top: 50px;
+}
+}
+
